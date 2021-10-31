@@ -148,11 +148,11 @@
   - pages
   	- [PageName]
           - Functional
-              - [PageName]Func.ts	//定义功能性方法
+              - [PageName]Func.ts	  //定义功能性方法
           - Models
-          	- Models.ts			//定义数据模型
+          	  - Models.ts			      //定义数据模型
           - UI
-          	-[PageName]UI.ts	//定义UI方法
+              -[PageName]UI.ts	    //定义UI方法
   	- [PageName].ts
   ```
 
