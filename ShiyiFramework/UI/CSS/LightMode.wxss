@@ -1,0 +1,58 @@
+
+.GradualBg{
+    background-image: var(--gradualBlue) !important;
+      color: var(--white) !important;
+  }
+
+  .GreenBg{
+    background-color:  var(--green) !important;
+  }
+
+  .OrangeBg{
+    background-color:  var(--orange) !important;
+  }
+
+  .BlueBg{
+    background-color:  var(--blue) !important;
+  }
+
+  .LightBg{
+    background-color: white !important;
+  }
+  .WhiteBg{
+    background-color: white !important;
+  }
+  
+  .GreyBg{
+    background-color:#f3f3f3 !important;
+  }
+  .DarkBg{
+    background-color: black !important;
+  }
+.LightText{
+    color: white !important;
+}
+
+
+.DarkText{
+    color: black !important;
+}
+
+  .BlackText{
+    color: black !important;
+  }
+  
+  .WhiteText{
+    color: white !important;
+  }
+  
+  .BlueText{
+    color:  var(--blue) !important;
+  }
+  
+  .GreyText{
+    color:var(--grey) !important;
+  }
+
+
+  

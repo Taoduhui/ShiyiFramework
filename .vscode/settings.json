@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/*.js": {
+            "when": "$(basename).ts" // 存在匹配的.ts文件时隐藏.js文件
+        },
+        "**/*.js.map": true,
+    },
+    "vetur.validation.template": false
+}

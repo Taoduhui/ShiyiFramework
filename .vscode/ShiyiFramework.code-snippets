@@ -1,0 +1,111 @@
+{
+	"创建ShiyiApi模板": {
+		"prefix": ">>ShiyiApi",
+		"body": [
+			"import { ApiBase } from \"../../../Base/ApiBase\";",
+			"import { ${1}ReqModel,${1}RespModel } from \"./Model/${1}ApiModel\";",
+			"",
+			"export class ${1:ApiName}Api extends ApiBase{",
+			"\tconstructor(_finish?:()=>void){",
+			"\t\tlet ApiUrl= \"${2:ApiUrl}\";",
+			"\t\tlet ReqModel=new ${1}ReqModel();",
+			"\t\tlet RespModel=new ${1}RespModel();",
+			"\t\tsuper(ApiUrl,ReqModel,RespModel,(model)=>",
+			"\t\t{",
+			"\t\t\tif(_finish){_finish();};",
+			"\t\t})",
+			"\t}",
+			"}",
+		],
+		"description": "创建ShiyiApi模板" 
+	},
+	"创建ApiModel模板": {
+		"prefix": ">>ShiyiApiModel",
+		"body": [
+			"import { RequestModelBase } from \"../../../../Base/RequestModelBase\";",
+			"import { ResposeModelBase } from \"../../../../Base/ResposeModelBase\";",
+			"",
+			"export class ${1:ApiName}ReqModel extends RequestModelBase {",
+			"\tconstructor() {",
+			"\t\tsuper();",
+			"\t}",
+			"\tpublic GetMethod(): \"OPTIONS\" | \"GET\" | \"HEAD\" | \"POST\" | \"PUT\" | \"DELETE\" | \"TRACE\" | \"CONNECT\" | undefined {",
+			"\t\treturn \"${2:Method}\"",
+			"}",
+			"\tpublic GetBody(): Record<string, any> {",
+			"\t\treturn ;",
+			"\t}",
+			"",
+			"}",
+			"",
+			"",
+			"export class ${1:ApiName}RespModel extends ResposeModelBase {",
+			"",
+			"\t",
+			"\tpublic Parse(data: string | Record<string, any>) {",
+			"\t\t//TODO: Parse Method",
+			"\t\treturn this;",
+			"\t}",
+			"\t",
+			"}",
+
+		],
+		"description": "创建ShiyiApiModel模板" 
+	},"创建ShiyiPage模板": {
+		"prefix": ">>ShiyiPage",
+		"body": [
+			"import { PageData } from \"../Base/ShiyiPageBase\"\r",
+			"import { ShiyiPageBase } from \"../Base/ShiyiPageBase\";\r",
+			"import { ${1:PageName}Func } from \"./Functional/${1:PageName}Func\";\r",
+			"import { ${1:PageName}UI } from \"./UI/${1:PageName}UI\";\r",
+			"\r",
+			"export interface ${1:PageName}Data extends PageData{\r",
+			"\r",
+			"}\r",
+			"\r",
+			"export class ${1:PageName} extends ShiyiPageBase{\r",
+			"    public Func=new ${1:PageName}Func();\r",
+			"    public UI=new ${1:PageName}UI();\r",
+			"    public data:${1:PageName}Data={\r",
+			"        Dark:\"\"\r",
+			"    }\r",
+			"    public onReady(){\r",
+			"        this.Func.Init(this).InitCustomData();\r",
+			"        this.UI.Init(this).InitCustomData();\r",
+			"    }\r",
+			"}"
+		],
+		"description": "description for 创建ShiyiPage模板"
+	},
+	"创建ShiyiPageUI模板": {
+		"prefix": ">>ShiyiUI",
+		"body": [
+			"import { PageData, ShiyiPageUIBase } from \"../../Base/ShiyiPageBase\";\r",
+			"import { ${1:PageName} } from \"../${1:PageName}\";\r",
+			"\r",
+			"\r",
+			"export class ${1:PageName}UI<PageT extends ${1:PageName}> extends ShiyiPageUIBase<PageT> {\r",
+			"\r",
+			"    public InitCustomData(_options?: Record<string, any>): void {\r",
+			"\r",
+			"    }\r",
+			"}"
+		],
+		"description": "description for 创建ShiyiPageUI模板"
+	},
+	"创建ShiyiPageFunc模板": {
+		"prefix": ">>ShiyiFunc",
+		"body": [
+			"import { ShiyiPageFuncBase } from \"../../Base/ShiyiPageBase\";\r",
+			"import { ${1:PageName} } from \"../${1:PageName}\";\r",
+			"\r",
+			"export class ${1:PageName}Func<PageT extends ${1:PageName}> extends ShiyiPageFuncBase<PageT>{\r",
+			"\r",
+			"    public InitCustomData(_options?: Record<string, any>): void {\r",
+			"\r",
+			"    }\r",
+			"}"
+		],
+		"description": "description for 创建ShiyiPageFunc模板"
+	}
+}

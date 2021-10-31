@@ -1,0 +1,61 @@
+page{
+    --gradualDark: linear-gradient(0deg, rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+.GradualBg.Dark{
+    background-image: var(--gradualDark) !important; 
+    color: rgb(126, 126, 126)  !important;
+  }
+
+  .GreenBg.Dark{
+    background-color:   #277932 !important;
+  }
+
+  .BlueBg.Dark{
+    background-color:  #004f9e !important;
+  }
+
+  .Orange.Dark{
+    background-color: #a35316 !important;
+  }
+
+.LightBg.Dark{
+    background-color: rgb(116, 116, 116) !important;
+  }
+
+  .DarkBg.Dark{
+    background-color: rgb(39, 39, 39) !important;
+  }
+
+  .DarkText.Dark{
+    color: black;
+}
+
+.WhiteBg.Dark{
+    background-color: rgb(44, 44, 44) !important;
+  }
+  
+.GreyBg.Dark{
+    background-color:#000000 !important;
+  }
+  
+  .LightText.Dark{
+    color: rgb(189, 189, 189) !important;
+  }
+
+.BlackText.Dark{
+    color: rgb(128, 128, 128) !important;
+  }
+  
+.WhiteText.Dark{
+    color: rgb(56, 56, 56) !important;
+  }
+  
+.BlueText.Dark{
+    color:  #004f9e !important;
+  }
+  
+.GreyText.Dark{
+    color: rgb(68, 68, 68) !important;
+  }
+  
