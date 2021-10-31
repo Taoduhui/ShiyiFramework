@@ -153,7 +153,18 @@
           	- Models.ts			//定义数据模型
           - UI
           	-[PageName]UI.ts	//定义UI方法
+  	- [PageName].ts
   ```
+
+  - Snippets
+
+    ```typescript
+    >>ShiyiPage		//填充Page.ts模板
+    >>ShiyiFunc		//填充Func.ts模板
+    >>ShiyiUI		//填充UI.ts模板
+    ```
+
+    
 
 - 生命周期
 
