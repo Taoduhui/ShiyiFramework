@@ -4,9 +4,9 @@ import { Guid } from "../Utils/Utils";
 
 
 export class GetSetData<DataT>{
-    private data:DataT;
-    private _getFunc?:(data:DataT)=>DataT;
-    private _setFunc?:(data:DataT)=>DataT;
+    protected data:DataT;
+    protected _getFunc?:(data:DataT)=>DataT;
+    protected _setFunc?:(data:DataT)=>DataT;
     constructor(data:DataT,_getFunc?:(data:DataT)=>DataT,_setFunc?:(data:DataT)=>DataT){
         this.data = data;
         this._getFunc = _getFunc;
@@ -30,7 +30,7 @@ export class GetSetData<DataT>{
 export class Data<DataT> extends GetSetData<DataT>{
 
     public readonly DataKey:string;
-    private RegisteredBindding:Array<ShiyiPageBase>=[];
+    protected RegisteredBindding:Array<ShiyiPageBase>=[];
 
     constructor(data:DataT,_getFunc?:(data:DataT)=>DataT,_setFunc?:(data:DataT)=>DataT){
         super(data,_getFunc,_setFunc);
@@ -61,5 +61,33 @@ export class Data<DataT> extends GetSetData<DataT>{
 
     public PageUnload(page:ShiyiPageBase):void{
         this.RemoveBindding(page);
+    }
+}
+
+export class StorageData<DataT> extends Data<DataT>{
+    protected StorageKey:string;
+    constructor(data:DataT,storageKey:string,_getFunc?:(data:DataT)=>DataT,_setFunc?:(data:DataT)=>DataT){
+        super(data,_getFunc,_setFunc);
+        this.StorageKey=storageKey;
+    }
+
+    public Get():DataT {
+        let data:DataT = wx.getStorageSync(this.StorageKey);
+        if(data){
+            if(this._getFunc){
+                return this._getFunc(data);
+            }
+        }
+        return data;
+    }
+
+    public Set(data:DataT){
+        if(this._setFunc){
+            data=this._setFunc(data);
+        }
+        wx.setStorageSync(this.StorageKey,data);
+        this.RegisteredBindding.forEach(page=>{
+            page.ObserverNotify(this.DataKey,data);
+        });
     }
 }

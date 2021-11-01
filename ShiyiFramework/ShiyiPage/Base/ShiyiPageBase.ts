@@ -77,6 +77,11 @@ export abstract class ShiyiPageBase
 
         //#region 数据绑定
         private ObserverList: Record<string,ObserverTarget<any>> = {};
+        /**
+         * 全局数据绑定
+         * @param data 绑定数据源
+         * @param target 绑定本页面的数据
+         */
         public AddObserver<DataT>(data:Data<DataT>,target:ObserverTarget<DataT>){ 
             let key = data.Bind(this);
             this.ObserverList[key] = target;

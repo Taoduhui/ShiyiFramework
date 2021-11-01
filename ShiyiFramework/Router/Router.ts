@@ -1,7 +1,7 @@
 import { ShiyiPageBase } from "../ShiyiPage/Base/ShiyiPageBase";
 
 export enum PageName {
-    DbDetail, DbSelector, Dictionary, index, MyFavorDb, recite, RichText, SearchWord, CreateDb, SearchDb
+    SamplePage1,SamplePage2
 }
 
 export interface PageMapItem {
@@ -13,7 +13,17 @@ export class Router {
     /**
      * 仅嵌套目录需要在此定义
      */
-    public static PageMap: Array<PageMapItem> = []
+    public static PageMap: Array<PageMapItem> = [
+        {
+            name: PageName.SamplePage1,
+            children: [
+                {
+                    name: PageName.SamplePage2,
+                    children: []
+                }
+            ]
+        }
+    ]
 
     public static TryGetMapPath(name: PageName, CurrentPath: string, map: Array<PageMapItem>): string {
         for (let i = 0; i < map.length; i++) {
@@ -54,6 +64,12 @@ export class Router {
         }
         Router.PageStacks.pop();
     }
+
+    /**
+     * 绑定指定页面Unloaded事件
+     * @param page 要绑定的页面
+     * @param notification Unload时处理函数
+     */
     public static RegisterPageUnLoaded(page: ShiyiPageBase,notification:(page: ShiyiPageBase) => void): void {
         let Observers = Router.RegisteredDataObservers.get(page);
         if (!Observers) {
