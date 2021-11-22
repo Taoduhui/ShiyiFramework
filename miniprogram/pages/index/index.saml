@@ -1,0 +1,6 @@
+<view class="center DarkBg {{Theme}}">
+  <Component Using="SampleComp" Id="Sample"/>
+  {{Ref:SampleRef}}
+  <view>SelfBinding:</view>
+  {{SelfBindContent}}
+</view>

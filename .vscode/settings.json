@@ -1,9 +1,26 @@
 {
-    "files.exclude": {
-        "**/*.js": {
-            "when": "$(basename).ts" // 存在匹配的.ts文件时隐藏.js文件
-        },
-        "**/*.js.map": true,
+  "files.exclude": {
+    "**/*.js": {
+      "when": "$(basename).ts"
     },
-    "vetur.validation.template": false
+    "**/*.js.map": true,
+    "**/*.json": {
+      "when": "$(basename).sajson"
+    },
+    "**/*.wxml": {
+      "when": "$(basename).saml"
+    },
+    "**/*.wxss": {
+      "when": "$(basename).sacss"
+    }
+  },
+  "vetur.validation.template": false,
+  "files.associations": {
+    "*.sajson": "json",
+    "*.saml": "wxml",
+    "*.sacss": "css",
+    "*.cajson": "json",
+    "*.caml": "wxml",
+    "*.cacss": "css"
+  }
 }

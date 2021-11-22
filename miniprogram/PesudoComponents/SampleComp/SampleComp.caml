@@ -1,0 +1,3 @@
+<view bindtap="{{Func:SampleFunc}}">
+    {{Com:SampleData}}
+</view>

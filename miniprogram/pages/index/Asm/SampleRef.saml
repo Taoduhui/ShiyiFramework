@@ -1,0 +1,6 @@
+<view bindtap="RefClicked">
+    SampleRef Click Me 
+    <view>
+        {{SampleRefClicked}}
+    </view>
+</view>

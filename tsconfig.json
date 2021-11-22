@@ -20,6 +20,11 @@
     "pretty": true,
     "strictPropertyInitialization": true,
     "lib": ["es6"],
+    "baseUrl": "./",
+    "paths": {
+      "@ShiyiFramework/*":["./miniprogram/ShiyiFramework/*"],
+      "@Root/*":["./miniprogram/*"],
+    },
     "typeRoots": [
       "./typings"
     ]
