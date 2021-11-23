@@ -1,4 +1,4 @@
-<FuckDotdot>
+<ShiyiAsm>
   <AliasSettings>
   </AliasSettings>
   <TargetFileTypes>
@@ -21,4 +21,4 @@
   <Command>
     <BeforeCmd>tsc</BeforeCmd>
   </Command>
-</FuckDotdot>
+</ShiyiAsm>
