@@ -1,3 +1,4 @@
+# 项目已迁移至ShiyiWx-Core https://github.com/Taoduhui/ShiyiWx-Core
 # ShiyiFramework
 ### ShiyiApi
 
